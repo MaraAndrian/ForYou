@@ -11,6 +11,7 @@
             padding: 0;
             background: radial-gradient(ellipse at center, #1a0a0f 0%, #000 70%);
             height: 100vh;
+            width: 100vw;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -106,7 +107,6 @@
             text-transform: uppercase;
             position: relative;
             opacity: 0;
-            transition: opacity 1.5s ease, all 0.8s ease;
         }
 
         .btn-enter:hover {
@@ -277,6 +277,85 @@
             pointer-events: none;
             opacity: 0.15;
         }
+
+        /* --- RESPONSIVE (Téléphone) --- */
+        @media (max-width: 768px) {
+            .welcome-text {
+                font-size: 1.8em;
+                letter-spacing: 2px;
+            }
+            
+            .it-guy {
+                font-size: 0.6em;
+                padding: 5px 12px;
+            }
+            
+            .welcome-sub {
+                font-size: 0.8em;
+            }
+            
+            .btn-enter {
+                padding: 10px 25px;
+                font-size: 0.7em;
+            }
+            
+            .divider {
+                width: 40px;
+            }
+            
+            .heart-container {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .ui_love_word {
+                font-size: 0.8em;
+            }
+            
+            .star-deco {
+                font-size: 0.5em;
+            }
+            
+            .floating-heart {
+                font-size: 1em;
+            }
+            
+            .line-deco {
+                height: 50px;
+            }
+            
+            .music-indicator {
+                font-size: 0.5em;
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .terminal-line {
+                font-size: 0.4em;
+                bottom: 50px;
+                left: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-text {
+                font-size: 1.4em;
+            }
+            
+            .heart-container {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .ui_love_word {
+                font-size: 0.6em;
+            }
+            
+            .btn-enter {
+                padding: 8px 20px;
+                font-size: 0.6em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -284,7 +363,7 @@
     <!-- DÉCORATIONS INTÉRIEURES -->
     <div id="particles"></div>
     
-    <!-- Étoiles (beaucoup plus) -->
+    <!-- Étoiles -->
     <div class="star-deco" style="top: 5%; left: 3%;">✦</div>
     <div class="star-deco" style="top: 12%; right: 6%; animation-delay: 0.5s;">✦</div>
     <div class="star-deco" style="top: 25%; left: 8%; animation-delay: 1s;">✦</div>
@@ -306,7 +385,7 @@
     <div class="star-deco" style="top: 10%; left: 25%; animation-delay: 0.6s;">✦</div>
     <div class="star-deco" style="top: 95%; right: 10%; animation-delay: 2.8s;">✦</div>
 
-    <!-- Lignes (plus nombreuses) -->
+    <!-- Lignes -->
     <div class="line-deco" style="left: 10%; top: 20%;"></div>
     <div class="line-deco" style="right: 10%; top: 20%; animation-delay: 1s;"></div>
     <div class="line-deco" style="left: 25%; top: 40%; animation-delay: 2s;"></div>
@@ -320,7 +399,7 @@
     <div class="line-deco" style="left: 85%; top: 50%; animation-delay: 2.8s;"></div>
     <div class="line-deco" style="right: 85%; top: 50%; animation-delay: 0.9s;"></div>
 
-    <!-- Cœurs flottants (plus nombreux) -->
+    <!-- Cœurs flottants -->
     <div class="floating-heart" style="left: 3%; animation-duration: 18s;">♥</div>
     <div class="floating-heart" style="right: 3%; animation-duration: 22s; animation-delay: 4s;">♥</div>
     <div class="floating-heart" style="left: 12%; animation-duration: 20s; animation-delay: 8s;">♥</div>
@@ -417,9 +496,7 @@
                 charIndex++;
                 setTimeout(typeText, 150);
             } else {
-                // Typing terminé : ajouter la classe pour le clignotement
                 typingText.classList.add('typing-done');
-                // Tout faire apparaître en douceur
                 setTimeout(showRemaining, 300);
             }
         }
