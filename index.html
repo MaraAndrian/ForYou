@@ -283,119 +283,109 @@
         /* --- RESPONSIVE (Téléphone) --- */
         @media (max-width: 768px) {
             .welcome-text {
-                font-size: 2.2em;
-                letter-spacing: 3px;
-            }
-            
-            .it-guy {
-                font-size: 0.7em;
-                padding: 6px 15px;
-            }
-            
-            .welcome-sub {
-                font-size: 0.9em;
-            }
-            
-            .btn-enter {
-                padding: 12px 30px;
-                font-size: 0.8em;
-                margin-top: 30px;
-            }
-            
-            .divider {
-                width: 50px;
-            }
-            
-            .heart-container {
-                width: 350px;
-                height: 350px;
-            }
-            
-            .ui_love_word {
-                font-size: 0.9em;
-            }
-            
-            .star-deco {
-                font-size: 0.6em;
-            }
-            
-            .floating-heart {
-                font-size: 1.2em;
-            }
-            
-            .line-deco {
-                height: 60px;
-            }
-            
-            .music-indicator {
-                font-size: 0.6em;
-                bottom: 15px;
-                right: 15px;
-            }
-            
-            .terminal-line {
-                font-size: 0.5em;
-                bottom: 50px;
-                left: 15px;
-            }
-
-            /* Réduire les décorations sur téléphone pour meilleur cadrage */
-            .star-deco {
-                display: none;
-            }
-            .star-deco:nth-child(1),
-            .star-deco:nth-child(2),
-            .star-deco:nth-child(3),
-            .star-deco:nth-child(4),
-            .star-deco:nth-child(5) {
-                display: block;
-            }
-            
-            .floating-heart {
-                display: none;
-            }
-            .floating-heart:nth-child(1),
-            .floating-heart:nth-child(2),
-            .floating-heart:nth-child(3) {
-                display: block;
-            }
-            
-            .line-deco {
-                display: none;
-            }
-            .line-deco:nth-child(1),
-            .line-deco:nth-child(2) {
-                display: block;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .welcome-text {
-                font-size: 1.8em;
+                font-size: 2em;
                 letter-spacing: 2px;
             }
             
-            .heart-container {
-                width: 280px;
-                height: 280px;
+            .it-guy {
+                font-size: 0.6em;
+                padding: 5px 12px;
             }
             
-            .ui_love_word {
-                font-size: 0.7em;
+            .welcome-sub {
+                font-size: 0.8em;
             }
             
             .btn-enter {
                 padding: 10px 25px;
                 font-size: 0.7em;
+                margin-top: 25px;
             }
             
-            .it-guy {
-                font-size: 0.6em;
-                padding: 4px 12px;
+            .divider {
+                width: 40px;
             }
             
-            .welcome-sub {
+            .heart-container {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .ui_love_word {
                 font-size: 0.8em;
+            }
+            
+            /* Décorations visibles mais réduites */
+            .star-deco {
+                font-size: 0.5em;
+                opacity: 0.2;
+            }
+            
+            .floating-heart {
+                font-size: 0.8em;
+                opacity: 0.15;
+            }
+            
+            .line-deco {
+                height: 40px;
+                opacity: 0.1;
+            }
+            
+            .music-indicator {
+                font-size: 0.5em;
+                bottom: 10px;
+                right: 10px;
+            }
+            
+            .terminal-line {
+                font-size: 0.4em;
+                bottom: 40px;
+                left: 10px;
+            }
+
+            /* Réduire le nombre de décorations pour ne pas surcharger */
+            .star-deco:nth-child(n+6) {
+                display: none;
+            }
+            
+            .floating-heart:nth-child(n+4) {
+                display: none;
+            }
+            
+            .line-deco:nth-child(n+3) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-text {
+                font-size: 1.6em;
+            }
+            
+            .heart-container {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .ui_love_word {
+                font-size: 0.6em;
+            }
+            
+            .btn-enter {
+                padding: 8px 18px;
+                font-size: 0.6em;
+            }
+            
+            .star-deco:nth-child(n+3) {
+                display: none;
+            }
+            
+            .floating-heart:nth-child(n+2) {
+                display: none;
+            }
+            
+            .line-deco:nth-child(n+2) {
+                display: none;
             }
         }
     </style>
