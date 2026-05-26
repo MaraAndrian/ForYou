@@ -11,6 +11,7 @@
             padding: 0;
             background: radial-gradient(ellipse at center, #1a0a0f 0%, #000 70%);
             height: 100vh;
+            width: 100vw;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -32,6 +33,8 @@
             align-items: center;
             z-index: 1000;
             transition: opacity 2.5s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         .welcome-text {
@@ -106,7 +109,6 @@
             text-transform: uppercase;
             position: relative;
             opacity: 0;
-            transition: opacity 1.5s ease, all 0.8s ease;
         }
 
         .btn-enter:hover {
@@ -277,6 +279,125 @@
             pointer-events: none;
             opacity: 0.15;
         }
+
+        /* --- RESPONSIVE (Téléphone) --- */
+        @media (max-width: 768px) {
+            .welcome-text {
+                font-size: 2.2em;
+                letter-spacing: 3px;
+            }
+            
+            .it-guy {
+                font-size: 0.7em;
+                padding: 6px 15px;
+            }
+            
+            .welcome-sub {
+                font-size: 0.9em;
+            }
+            
+            .btn-enter {
+                padding: 12px 30px;
+                font-size: 0.8em;
+                margin-top: 30px;
+            }
+            
+            .divider {
+                width: 50px;
+            }
+            
+            .heart-container {
+                width: 350px;
+                height: 350px;
+            }
+            
+            .ui_love_word {
+                font-size: 0.9em;
+            }
+            
+            .star-deco {
+                font-size: 0.6em;
+            }
+            
+            .floating-heart {
+                font-size: 1.2em;
+            }
+            
+            .line-deco {
+                height: 60px;
+            }
+            
+            .music-indicator {
+                font-size: 0.6em;
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .terminal-line {
+                font-size: 0.5em;
+                bottom: 50px;
+                left: 15px;
+            }
+
+            /* Réduire les décorations sur téléphone pour meilleur cadrage */
+            .star-deco {
+                display: none;
+            }
+            .star-deco:nth-child(1),
+            .star-deco:nth-child(2),
+            .star-deco:nth-child(3),
+            .star-deco:nth-child(4),
+            .star-deco:nth-child(5) {
+                display: block;
+            }
+            
+            .floating-heart {
+                display: none;
+            }
+            .floating-heart:nth-child(1),
+            .floating-heart:nth-child(2),
+            .floating-heart:nth-child(3) {
+                display: block;
+            }
+            
+            .line-deco {
+                display: none;
+            }
+            .line-deco:nth-child(1),
+            .line-deco:nth-child(2) {
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .welcome-text {
+                font-size: 1.8em;
+                letter-spacing: 2px;
+            }
+            
+            .heart-container {
+                width: 280px;
+                height: 280px;
+            }
+            
+            .ui_love_word {
+                font-size: 0.7em;
+            }
+            
+            .btn-enter {
+                padding: 10px 25px;
+                font-size: 0.7em;
+            }
+            
+            .it-guy {
+                font-size: 0.6em;
+                padding: 4px 12px;
+            }
+            
+            .welcome-sub {
+                font-size: 0.8em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -284,7 +405,7 @@
     <!-- DÉCORATIONS INTÉRIEURES -->
     <div id="particles"></div>
     
-    <!-- Étoiles (beaucoup plus) -->
+    <!-- Étoiles -->
     <div class="star-deco" style="top: 5%; left: 3%;">✦</div>
     <div class="star-deco" style="top: 12%; right: 6%; animation-delay: 0.5s;">✦</div>
     <div class="star-deco" style="top: 25%; left: 8%; animation-delay: 1s;">✦</div>
@@ -306,7 +427,7 @@
     <div class="star-deco" style="top: 10%; left: 25%; animation-delay: 0.6s;">✦</div>
     <div class="star-deco" style="top: 95%; right: 10%; animation-delay: 2.8s;">✦</div>
 
-    <!-- Lignes (plus nombreuses) -->
+    <!-- Lignes -->
     <div class="line-deco" style="left: 10%; top: 20%;"></div>
     <div class="line-deco" style="right: 10%; top: 20%; animation-delay: 1s;"></div>
     <div class="line-deco" style="left: 25%; top: 40%; animation-delay: 2s;"></div>
@@ -320,7 +441,7 @@
     <div class="line-deco" style="left: 85%; top: 50%; animation-delay: 2.8s;"></div>
     <div class="line-deco" style="right: 85%; top: 50%; animation-delay: 0.9s;"></div>
 
-    <!-- Cœurs flottants (plus nombreux) -->
+    <!-- Cœurs flottants -->
     <div class="floating-heart" style="left: 3%; animation-duration: 18s;">♥</div>
     <div class="floating-heart" style="right: 3%; animation-duration: 22s; animation-delay: 4s;">♥</div>
     <div class="floating-heart" style="left: 12%; animation-duration: 20s; animation-delay: 8s;">♥</div>
@@ -417,9 +538,7 @@
                 charIndex++;
                 setTimeout(typeText, 150);
             } else {
-                // Typing terminé : ajouter la classe pour le clignotement
                 typingText.classList.add('typing-done');
-                // Tout faire apparaître en douceur
                 setTimeout(showRemaining, 300);
             }
         }
